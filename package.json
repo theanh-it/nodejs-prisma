@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.8.1",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^9.0.0",
+    "module-alias": "^2.2.2",
+    "prisma": "^4.8.1",
+    "socket.io": "^4.5.4"
+  },
+  "_moduleAliases": {
+    "@src": "src",
+    "@app": "src/app",
+    "@base": "src/base"
+  }
+}
