@@ -1,10 +1,10 @@
-const route = require("express").Router();
+const V1Route = require("@app/v1/routes");
 const controller = require("@app/v1/user/UserController");
 
-route.get("/", controller.getAll);
-route.get("/:id", controller.getSingle);
-route.post("/", controller.create);
-route.post("/:id", controller.update);
-route.delete("/:id", controller.delete);
+module.exports = class UserV1Route extends V1Route {
+  controller = controller;
 
-module.exports = route;
+  constructor(dir = "") {
+    super("/user" + dir);
+  }
+};

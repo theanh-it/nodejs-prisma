@@ -10,14 +10,14 @@ const AppRoute = require("@app/routes");
 
 const port = process.env.PORT || 3000;
 const app = express();
+const appRoute = new AppRoute();
 
 app.use(cors);
 app.use(express.text());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(expressFileupload());
-const route = new AppRoute();
-//app.use("/", new AppRoute().routes);
+app.use("/", appRoute.getRoutes());
 
 app.listen(port, () => {
   console.log("server running: http://localhost:" + port);
